@@ -1,84 +1,75 @@
-# Currency Converter Application
+# Aplicativo de Conversor de Moedas
 
-This is a Java-based terminal application that allows users to convert currencies in real-time. The application uses the [ExchangeRate-API](https://www.exchangerate-api.com/) to fetch current exchange rates and display a graph with the historical exchange rates.
+Este é um aplicativo de terminal em Java que permite aos usuários converter moedas em tempo real. A aplicação utiliza a [ExchangeRate-API](https://www.exchangerate-api.com/) para obter as taxas de câmbio atuais e exibir um gráfico com as taxas de câmbio históricas.
 
-## Features
+## Funcionalidades
 
-- **Real-Time Currency Conversion**: Convert currencies like USD, EUR, BRL, ARS, and COP.
-- **User-Friendly Terminal Menu**: Navigate through an intuitive terminal menu for selecting currency pairs.
-- **Object-Oriented Design**: The application follows object-oriented design principles with a modular structure.
-- **Extensible Architecture**: Easily extend the application to add new currency pairs or conversion features.
+- **Conversão de Moedas em Tempo Real**: Converta moedas como USD, EUR, BRL, ARS e COP.
+- **Menu Amigável no Terminal**: Navegue por um menu intuitivo no terminal para selecionar pares de moedas.
+- **Design Orientado a Objetos**: O aplicativo segue princípios de design orientado a objetos com uma estrutura modular.
+- **Arquitetura Extensível**: Expanda facilmente a aplicação para adicionar novos pares de moedas ou funcionalidades de conversão.
 
-## Technologies Used
+## Tecnologias Utilizadas
 
-- **Java 21**: Core language used for development.
-- **Maven**: Build and dependency management tool.
-- **Gson**: Used for parsing JSON responses from the API.
-- **ExchangeRate-API**: API used to retrieve real-time exchange rates and historical data.
+- **Java 21**: Linguagem principal usada para o desenvolvimento.
+- **Maven**: Ferramenta de gerenciamento de dependências e construção de projeto.
+- **Gson**: Usado para analisar as respostas JSON da API.
+- **ExchangeRate-API**: API utilizada para recuperar taxas de câmbio em tempo real e dados históricos.
 
-## Project Structure
+## Estrutura do Projeto
 
 - ┌── ConversorMoedas/
 - │├── src/
-- ││├── main/ 
-- │││ ├── java/
-- │││ │ ├── github.com.allex_goncalves/ 
-- │││ │ │ ├── Main.java <span style="color:yellow;"># Main entry point</span>
-- │││ │ │ ├── Menu.java <span style="color:yellow;"># Handles the menu logic</span>
-- │││ │ │ ├── ApiIntegration.java <span style="color:yellow;"># Handles API requests</span> 
-- │││ │ │ ├── DollarConverter.java <span style="color:yellow;"># Handles USD conversions</span> 
-- │││ │ │ ├── EuroConverter.java <span style="color:yellow;"># Handles EUR conversions</span>
-- ├── .gitgnore <span style="color:yellow;"># File to ignore files and directories in Git</span>
-- ├── pom.xml <span style="color:yellow;"># Maven project configuration</span>
-- └── README.md <span style="color:yellow;"># Project documentation</span>
+- ││├── Main.java <span style="color:yellow;"># Ponto de entrada principal</span>
+- ││├── Menu.java <span style="color:yellow;"># Gerencia a lógica do menu</span>
+- ││├── ApiIntegration.java <span style="color:yellow;"># Gerencia as requisições para a API</span> 
+- ││├── DollarConverter.java <span style="color:yellow;"># Gerencia conversões de USD</span> 
+- │ ├── EuroConverter.java <span style="color:yellow;"># Gerencia conversões de EUR</span>
+- ├── .gitignore <span style="color:yellow;"># Arquivo para ignorar arquivos e diretórios no Git</span>
+- ├── pom.xml <span style="color:yellow;"># Configuração do projeto Maven</span>
+- └── README.md <span style="color:yellow;"># Documentação do projeto</span>
 
+## Instalação e Configuração
 
-## Installation and Setup
-
-1. **Clone the repository**:
+1. **Clone o repositório**:
     ```bash
-    git clone https://github.com/Allex-Goncalves/Conversor-Moedas.git
+    git clone https://github.com/silviaso1/Conversor-de-Moedas.git
     cd ConversorMoedas
     ```
 
-2. **Install Maven Dependencies**:
-   Ensure you have Maven installed. If not, download it from [Maven Installation Guide](https://maven.apache.org/install.html). Run the following command to install project dependencies:
+2. **Instale as Dependências do Maven**:
+   Certifique-se de ter o Maven instalado. Se não tiver, faça o download seguindo o [Guia de Instalação do Maven](https://maven.apache.org/install.html). Execute o seguinte comando para instalar as dependências do projeto:
     ```bash
     mvn clean install
     ```
 
-3. **Get Your API Key**:
-    - Visit [ExchangeRate-API](https://www.exchangerate-api.com/) and register for a free API key.
-    - Open `ApiIntegration.java` and replace `YOUR_API_KEY` with your actual API key.
+3. **Obtenha Sua Chave da API**:
+    - Acesse [ExchangeRate-API](https://www.exchangerate-api.com/) e registre-se para obter uma chave de API gratuita.
+    - Abra o arquivo `ApiIntegration.java` e substitua `YOUR_API_KEY` pela sua chave de API.
 
-4. **Run the Application**:
-   After setting up everything, you can run the application using the following command:
-    ```bash
-    mvn exec:java -Dexec.mainClass="github.com.allex_goncalves.Main"
-    ```
+4. **Execute a Aplicação**
 
-## Usage
+## Uso
 
-1. **Main Menu**:
-    - The application will display the main menu where you can select currencies for conversion (e.g., USD, EUR).
+1. **Menu Principal**:
+    - A aplicação exibirá o menu principal, onde você pode selecionar as moedas para conversão (por exemplo, USD, EUR).
 
-2. **Currency Conversion**:
-    - Once a currency is selected, enter the amount to be converted, and the application will fetch real-time exchange rates using the ExchangeRate-API.
+2. **Conversão de Moedas**:
+    - Após selecionar uma moeda, insira o valor a ser convertido, e o aplicativo buscará as taxas de câmbio em tempo real usando a ExchangeRate-API.
 
+## Exemplo de Uso
 
-## Example Usage
+1. No terminal, selecione a moeda que deseja converter (por exemplo, `Dólar $`).
+2. Escolha o tipo de conversão (por exemplo, `Dólar $ => Real R$`).
+3. Insira o valor que deseja converter, e o resultado será exibido.
 
-1. On the terminal, select the currency you want to convert (e.g., `Dollar $`).
-2. Choose the conversion type (e.g., `Dollar $ => Real R$`).
-3. Enter the amount you wish to convert, and the result will be displayed.
+## Dependências
 
-## Dependencies
+- **Java 21**: Certifique-se de que o Java 21 esteja instalado em sua máquina.
+- **Maven**: Para construção do projeto e gerenciamento de dependências.
+- **Gson**: Para analisar dados JSON da API.
 
-- **Java 21**: Ensure Java 21 is installed on your machine.
-- **Maven**: For project building and dependency management.
-- **Gson**: For parsing JSON data from the API.
-
-Add the following Maven dependencies in your `pom.xml`:
+Adicione as seguintes dependências Maven no seu `pom.xml`:
 
 ```xml
 <dependencies>
@@ -89,5 +80,3 @@ Add the following Maven dependencies in your `pom.xml`:
     </dependency>
 </dependencies>
 ```
-
-
